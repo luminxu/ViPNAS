@@ -22,4 +22,4 @@ Please consider citing our paper in your publications, if the project helps your
 ```
 
 ## License
-Please, see the [LICENSE](LICENSE) for further details. 
+Our research code is released under the MIT license. Please see the [LICENSE](LICENSE) for further details. 
