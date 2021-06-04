@@ -11,7 +11,7 @@ Human pose estimation has achieved significant progress in recent years. However
 
 ## Getting started
 
-Our codes will be reimplemented in [MMPose](https://github.com/open-mmlab/mmpose) soon.
+Our codes will be reimplemented based on [MMPose](https://github.com/open-mmlab/mmpose) soon.
 
 
 ## Citations
