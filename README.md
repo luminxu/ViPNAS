@@ -1,19 +1,20 @@
 # ViPNAS: Efficient Video Pose Estimation via Neural Architecture Search
 
-\[[paper](https://arxiv.org/abs/2105.10154)\] 
+\[[paper](https://arxiv.org/abs/2105.10154)\]
 
 ## Introduction
 
-This is the official implementation of 
+This is the official implementation of
 [*ViPNAS: Efficient Video Pose Estimation via Neural Architecture Search*](https://arxiv.org/abs/2105.10154) (CVPR'2021) paper.
 
 Human pose estimation has achieved significant progress in recent years. However, most of the recent methods focus on improving accuracy using complicated models and ignoring real-time efficiency. To achieve a better trade-off between accuracy and efficiency, we propose a novel neural architecture search (NAS) method, termed ViPNAS, to search networks in both spatial and temporal levels for fast online video pose estimation. In the spatial level, we carefully design the search space with five different dimensions including network depth, width, kernel size, group number, and attentions. In the temporal level, we search from a series of temporal feature fusions to optimize the total accuracy and speed across multiple video frames. To the best of our knowledge, we are the first to search for the temporal feature fusion and automatic computation allocation in videos. Extensive experiments demonstrate the effectiveness of our approach on the challenging COCO2017 and PoseTrack2018 datasets. Our discovered model family, S-ViPNAS and T-ViPNAS, achieve significantly higher inference speed (CPU real-time) without sacrificing the accuracy compared to the previous state-of-the-art methods.
 
-
 Our code is reimplemented based on [MMPose](https://github.com/open-mmlab/mmpose).
 
 ## Enviroment
+
 The code is developed using python 3.6 on Ubuntu 16.04. NVIDIA GPUs are needed. The code is developed and tested using 8 NVIDIA V100 GPU cards. Other platforms or GPU cards are not fully tested.
+
 ## Quick Start
 
 ### Requirements
@@ -29,8 +30,8 @@ The code is developed using python 3.6 on Ubuntu 16.04. NVIDIA GPUs are needed. 
 - json_tricks
 - [xtcocotools](https://github.com/jin-s13/xtcocoapi)
 
-
 ### Installation
+
 <!-- The code is based on [MMPose](https://github.com/open-mmlab/mmpose).
 You need clone the mmpose project and integrate the codes into mmpose first. -->
 
@@ -108,6 +109,7 @@ mmpose
 ```
 
 ## Training and Testing
+
 All outputs (log files and checkpoints) will be saved to the working directory,
 which is specified by `work_dir` in the config file.
 
@@ -148,11 +150,13 @@ Difference between `resume-from` and `load-from`:
 Examples:
 
 #### Training on COCO train2017 dataset
+
 ```shell
 ./tools/dist_train.sh configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_res50_coco_256x192.py 8
 ```
 
 ### Testing
+
 You can use the following commands to test a dataset.
 
 ```shell
@@ -179,7 +183,8 @@ Optional arguments:
 - `LOCAL_RANK`: ID for local rank. If not specified, it will be set to 0.
 
 Examples:
-#### Test S-ViPNAS-Res50 on COCO with 8 GPUS, and evaluate the mAP.
+
+#### Test S-ViPNAS-Res50 on COCO with 8 GPUS, and evaluate the mAP
 
 ```shell
 ./tools/dist_test.sh configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_res50_coco_256x192.py \
@@ -193,8 +198,8 @@ Thanks to:
 
 - [MMPose](https://github.com/open-mmlab/mmpose)
 
-
 ## Citations
+
 Please consider citing our paper in your publications, if the project helps your research. BibTeX reference is as follows.
 
 ```
@@ -207,4 +212,5 @@ Please consider citing our paper in your publications, if the project helps your
 ```
 
 ## License
-Our research code is released under the MIT license. Please see the [LICENSE](LICENSE) for further details. 
+
+Our research code is released under the MIT license. Please see the [LICENSE](LICENSE) for further details.

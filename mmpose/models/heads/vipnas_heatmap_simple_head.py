@@ -76,11 +76,8 @@ class ViPNASHeatmapSimpleHead(TopdownHeatmapBaseHead):
 
         if num_deconv_layers > 0:
             self.deconv_layers = self._make_deconv_layer(
-                num_deconv_layers,
-                num_deconv_filters,
-                num_deconv_kernels,
-                num_deconv_groups
-            )
+                num_deconv_layers, num_deconv_filters, num_deconv_kernels,
+                num_deconv_groups)
         elif num_deconv_layers == 0:
             self.deconv_layers = nn.Identity()
         else:
@@ -292,7 +289,8 @@ class ViPNASHeatmapSimpleHead(TopdownHeatmapBaseHead):
 
         return inputs
 
-    def _make_deconv_layer(self, num_layers, num_filters, num_kernels, num_groups):
+    def _make_deconv_layer(self, num_layers, num_filters, num_kernels,
+                           num_groups):
         """Make deconv layers."""
         if num_layers != len(num_filters):
             error_msg = f'num_layers({num_layers}) ' \

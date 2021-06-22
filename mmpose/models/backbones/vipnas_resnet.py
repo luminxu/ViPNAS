@@ -2,7 +2,7 @@ import copy
 
 import torch.nn as nn
 import torch.utils.checkpoint as cp
-from mmcv.cnn import (ConvModule, build_conv_layer, build_norm_layer)
+from mmcv.cnn import ConvModule, build_conv_layer, build_norm_layer
 from mmcv.utils.parrots_wrapper import _BatchNorm
 
 from ..builder import BACKBONES
@@ -33,7 +33,8 @@ class ViPNAS_Bottleneck(nn.Module):
             Default: dict(type='BN')
         kernel_size (int): kernel size of conv2 searched in ViPANS.
         groups (int): group number of conv2 searched in ViPNAS.
-        attention (bool): whether to use attention module in the end of the block.
+        attention (bool): whether to use attention module in the end of
+            the block.
     """
 
     def __init__(self,
@@ -110,7 +111,8 @@ class ViPNAS_Bottleneck(nn.Module):
         self.add_module(self.norm3_name, norm3)
 
         if attention:
-            self.attention = ContextBlock(out_channels, 1.0 / 16, 'att', ['channel_add'])
+            self.attention = ContextBlock(out_channels, 1.0 / 16, 'att',
+                                          ['channel_add'])
         else:
             self.attention = None
 
@@ -380,7 +382,6 @@ class ViPNAS_ResNet(BaseBackbone):
         ks (list(int)): searched kernel size config for each stage.
         group (list(int)): searched group number config for each stage.
         att (list(int)): searched attention config for each stage.
-
     """
 
     arch_settings = {
@@ -433,7 +434,7 @@ class ViPNAS_ResNet(BaseBackbone):
         self.norm_eval = norm_eval
         self.zero_init_residual = zero_init_residual
         self.block = self.arch_settings[depth]
-        self.stage_blocks = dep[1:1+num_stages]
+        self.stage_blocks = dep[1:1 + num_stages]
 
         self._make_stem_layer(in_channels, wid[0], ks[0])
 
@@ -457,9 +458,9 @@ class ViPNAS_ResNet(BaseBackbone):
                 with_cp=with_cp,
                 conv_cfg=conv_cfg,
                 norm_cfg=norm_cfg,
-                kernel_size=ks[i+1],
-                groups=group[i+1],
-                attention=att[i+1])
+                kernel_size=ks[i + 1],
+                groups=group[i + 1],
+                attention=att[i + 1])
             _in_channels = _out_channels
             layer_name = f'layer{i + 1}'
             self.add_module(layer_name, res_layer)
