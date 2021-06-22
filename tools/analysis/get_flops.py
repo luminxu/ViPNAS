@@ -36,7 +36,7 @@ def main():
 
     cfg = Config.fromfile(args.config)
     model = build_posenet(cfg.model)
-    # model = model.cuda()
+    model = model.cuda()
     model.eval()
 
     if hasattr(model, 'forward_dummy'):
