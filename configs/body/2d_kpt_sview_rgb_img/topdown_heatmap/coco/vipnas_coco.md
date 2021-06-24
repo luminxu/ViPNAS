@@ -3,7 +3,6 @@
 <details>
 <summary align="right">ViPNAS (CVPR'2021)</summary>
 
-
 ```bibtex
 @article{xu2021vipnas,
   title={ViPNAS: Efficient Video Pose Estimation via Neural Architecture Search},
@@ -32,3 +31,9 @@
 ```
 
 </details>
+
+Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
+
+| Arch  | Input Size | AP | AP<sup>50</sup> | AP<sup>75</sup> | AR | AR<sup>50</sup> | ckpt | log |
+| :-------------- | :-----------: | :------: | :------: | :------: | :------: | :------: |:------: |:------: |
+| [S-VipNAS-Res50](https://github.com/luminxu/ViPNAS/blob/main/configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_res50_coco_256x192.py)  | 256x192 | 0.711 | 0.893 | 0.789 | 0.769 | 0.769 | [ckpt](https://drive.google.com/file/d/1maPJb8bTsUZOEljp-ceSvJFz3Jyn3VbO/view) | [log](https://drive.google.com/file/d/1VRmsvPKvpaPqHqVZYqmX1aatGzfmCWRS/view) |
