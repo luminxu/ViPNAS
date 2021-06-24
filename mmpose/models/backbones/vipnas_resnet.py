@@ -9,8 +9,6 @@ from mmcv.utils.parrots_wrapper import _BatchNorm
 from ..builder import BACKBONES
 from .base_backbone import BaseBackbone
 
-# from .utils import ContextBlock
-
 
 class ViPNAS_Bottleneck(nn.Module):
     """Bottleneck block for ViPNAS_ResNet.
