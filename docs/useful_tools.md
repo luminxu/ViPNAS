@@ -7,7 +7,7 @@ Apart from training/testing scripts, We provide lots of useful tools under the `
 - [Log Analysis](#log-analysis)
 - [Model Complexity (experimental)](#model-complexity)
 - [Model Conversion](#model-conversion)
-  - [MMPose model to ONNX (experimental)](#mmpose-model-to-onnx--experimental-)
+  - [MMPose model to ONNX (experimental)](#mmpose-model-to-onnx-experimental)
   - [Prepare a model for publishing](#prepare-a-model-for-publishing)
 - [Miscellaneous](#miscellaneous)
   - [Evaluating a metric](#evaluating-a-metric)
