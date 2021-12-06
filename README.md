@@ -15,11 +15,14 @@ Our code is reimplemented based on [MMPose](https://github.com/open-mmlab/mmpose
 
 ### Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
 
-| Arch  | Input Size | ImageNet Pretrain | AP | AP<sup>50</sup> | AP<sup>75</sup> | AP<sup>M</sup> | AP<sup>L</sup> | AR | ckpt | log |
-| :-------------- | :-----------: |:-----------: | :------: | :------: | :------: | :------: | :------: |:------: |:------: |:------: |
-| ResNet-50 (paper)  | 256x192 | Y | 0.704 | 0.886 | 0.783 | 0.671 | 0.772 | 0.763 |  |  |
-| S-VipNAS-Res50 (paper)  | 256x192 | N | 0.710 | 0.893 | 0.787 | 0.677 | 0.775 | 0.767 |  |  |
-| [S-VipNAS-Res50](https://github.com/luminxu/ViPNAS/blob/main/configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_res50_coco_256x192.py)  | 256x192 | N | 0.711 | 0.893 | 0.789 | 0.679 | 0.777 | 0.769 | [ckpt](https://drive.google.com/file/d/1maPJb8bTsUZOEljp-ceSvJFz3Jyn3VbO/view) | [log](https://drive.google.com/file/d/1VRmsvPKvpaPqHqVZYqmX1aatGzfmCWRS/view) |
+| Arch                                                                                                                                                | Input Size | ImageNet Pretrain |  AP   |  AP<sup>50</sup>  | AP<sup>75</sup> | AP<sup>M</sup> | AP<sup>L</sup> |  AR   | ckpt | log |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------| :-----------: |:-----------: |:-----:|:-----------------:|:---------------:|:--------------:|:--------------:|:-----:|:------: |:------: |
+| MobileNet-V3 (paper)                                                                                                                                | 256x192 | Y | 0.647 |       0.867       |      0.726      |     0.614      |     0.709      | 0.721 |  |  |
+| S-VipNAS-MobileNetV3 (paper)                                                                                                                        | 256x192 | N | 0.678 |       0.872       |      0.760      |     0.647      |     0.740      | 0.752 |  |  |
+| [S-ViPNAS-MobileNetV3](/configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_mbv3_coco_256x192.py)                                       | 256x192 | N | 0.700 |       0.887       |      0.778      |     0.666      |     0.766      | 0.757 | [ckpt](https://drive.google.com/file/d/1Rb2-Vvu2CohhPcQwZgMOvrhqw3xyvmJd/view) | [log](https://drive.google.com/file/d/1mOsW875QdjUrOMsfK3TtNyKDECRf66Ki/view) |
+| ResNet-50 (paper)                                                                                                                                   | 256x192 | Y | 0.704 |       0.886       |      0.783      |     0.671      |     0.772      | 0.763 |  |  |
+| S-VipNAS-Res50 (paper)                                                                                                                              | 256x192 | N | 0.710 |       0.893       |      0.787      |     0.677      |     0.775      | 0.767 |  |  |
+| [S-VipNAS-Res50](https://github.com/luminxu/ViPNAS/blob/main/configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/s_vipnas_res50_coco_256x192.py) | 256x192 | N | 0.711 |       0.893       |      0.789      |     0.679      |     0.777      | 0.769 | [ckpt](https://drive.google.com/file/d/1maPJb8bTsUZOEljp-ceSvJFz3Jyn3VbO/view) | [log](https://drive.google.com/file/d/1VRmsvPKvpaPqHqVZYqmX1aatGzfmCWRS/view) |
 
 ## Enviroment
 
